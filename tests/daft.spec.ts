@@ -20,7 +20,7 @@ test('Login to Daft', async ({ page }) => {
   await page.getByTestId('top-level-active-nav-link').click();
 
   // SignIn and SignOut
-  await page.getByLabel('Email or username').fill('rogers.garry@gmail.com');
+  await page.getByLabel('Email or username').fill(process.env.USERNAME!);
   await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'SIGN IN' }).click();
   await page.getByTestId('nav-item-mydaft').getByTestId('top-level-nav-item').click();
