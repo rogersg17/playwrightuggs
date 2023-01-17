@@ -16,6 +16,13 @@ test('Login to Daft', async ({ page }) => {
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/www.daft.ie/);
 
+  // Select For Sale from 700000 Sorted by Most Recent
+  await page.getByTestId('quick-link-0').click();
+  await page.getByTestId('salePrice').click();
+  await page.getByTestId('salePriceFrom').selectOption('700000');
+  await page.getByTestId('salePriceMenu').getByTestId('filter-done-button').click();
+  await page.getByTestId('sort').selectOption('publishDateDesc');
+
   //click SignIn
   await page.getByTestId('top-level-active-nav-link').click();
 

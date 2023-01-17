@@ -43,6 +43,7 @@ const config: PlaywrightTestConfig = {
     headless: true,
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
+    screenshot: 'on',
   },
 
   /* Configure projects for major browsers */
