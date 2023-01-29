@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  USERNAME: $(username)
+  PASSWORD: $(password)
+
 steps:
 
 - task: NodeTool@0
@@ -24,16 +28,9 @@ steps:
    npx playwright install --with-deps
   displayName: "Install Playwright Browsers"
 
-
-
-
 - script:
    npx playwright test
   displayName: "Run playwright tests"
-
-variables:
-  USERNAME: $(username)
-  PASSWORD: $(password)
 
 - publish: $(System.DefaultWorkingDirectory)/playwright-report
   artifact: playwright-report
