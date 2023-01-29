@@ -6,10 +6,6 @@
 trigger:
 - master
 
-variables:
-  USERNAME: $(username)
-  PASSWORD: $(password)
-
 pool:
   vmImage: ubuntu-latest
 
@@ -34,6 +30,10 @@ steps:
 - script:
    npx playwright test
   displayName: "Run playwright tests"
+
+variables:
+  USERNAME: $(username)
+  PASSWORD: $(password)
 
 - publish: $(System.DefaultWorkingDirectory)/playwright-report
   artifact: playwright-report
