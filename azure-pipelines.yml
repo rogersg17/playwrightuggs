@@ -30,8 +30,8 @@ steps:
    npx playwright test
   displayName: "Run playwright tests"
   env:
-  USERNAME: $(username)
-  PASSWORD: $(password)
+   USERNAME: $(username)
+   PASSWORD: $(password)
 
 - publish: $(System.DefaultWorkingDirectory)/playwright-report
   artifact: playwright-report
