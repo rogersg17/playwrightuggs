@@ -24,9 +24,9 @@ steps:
   displayName: "Install Playwright Browsers"
 
 - script:
-  npx playwright test
+   npx playwright test
   displayName: "Run playwright tests"
 
 - publish: $(System.DefaultWorkingDirectory)/playwright-report
-artifact: playwright-report
-condition: always()
+  artifact: playwright-report
+  condition: always()
