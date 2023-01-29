@@ -9,9 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  USERNAME: $(username)
-  PASSWORD: $(password)
+
 
 steps:
 
@@ -27,6 +25,10 @@ steps:
 - script: 
    npx playwright install --with-deps
   displayName: "Install Playwright Browsers"
+
+env:
+  USERNAME: $(username)
+  PASSWORD: $(password)
 
 - script:
    npx playwright test
