@@ -23,6 +23,11 @@ steps:
    npx playwright install --with-deps
   displayName: "Install Playwright Browsers"
 
+env:
+  USERNAME: $(username)
+  PASSWORD: $(password)
+
+
 - script:
    npx playwright test
   displayName: "Run playwright tests"
